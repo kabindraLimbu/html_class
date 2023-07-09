@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: purple;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            margin-left: 200px;
+            padding-left: 20px;
+            padding-top: 20px;
+
+        }
+
+        h1 {
+            text-decoration: underline;
+            text-align: center;
+            color: purple;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            width: 120px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container input {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>STUDENT REGISTRATION FORM</h1><br><br>
+    <div class="container">
+        <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" maxlength="30" required>
+            (max 30 characters)
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" maxlength="30" required>
+            (max 30 characters)
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="date-of-birth">Date of Birth:</label> -->
+            <!-- <input type="date" id="date-of-birth" name="date-of-birth" required> -->
+
+            <label for="dob-day">Date of Birth:</label>
+            <select id="dob-day" name="dob-day">
+              <!-- Placeholder option for day -->
+              <option value="" disabled selected>Day</option>
+              <!-- Options for day -->
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <!-- Add more options for days -->
+            </select>
+          
+            <select id="dob-month" name="dob-month">
+              <!-- Placeholder option for month -->
+              <option value="" disabled selected>Month</option>
+              <!-- Options for month -->
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <!-- Add more options for months -->
+            </select>
+          
+            <select id="dob-year" name="dob-year">
+              <!-- Placeholder option for year -->
+              <option value="" disabled selected>Year</option>
+              <!-- Options for year -->
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <!-- Add more options for years -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="30" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" maxlength="30" required>
+            (Max 30 characters)
+        </div>
+
+        <div class="form-group">
+            <label for="pin">PIN Code:</label>
+            <input type="text" id="pin" name="pin" pattern="[0-9]{6}" maxlength="6" required>
+            (6-digit Number)
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" maxlength="30" required>
+            (Max 30 characters)
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="Nepal" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Hobbies:</label>
+            <label for="drawing">Drawing</label>
+            <input type="checkbox" id="drawing" name="hobbies[]" value="drawing">
+
+            <label for="singing">Singing</label>
+            <input type="checkbox" id="singing" name="hobbies[]" value="singing">
+
+            <label for="dancing">Dancing</label>
+            <input type="checkbox" id="dancing" name="hobbies[]" value="dancing">
+
+            <label for="sketching">Sketching</label>
+            <input type="checkbox" id="sketching" name="hobbies[]" value="sketching">
+
+            <label for="other">Other</label>
+            <input type="checkbox" id="other" name="hobbies[]" value="other">
+            <input type="text" id="other-hobby" name="other-hobby" placeholder="Specify other hobby">
+        </div>
+
+        <div class="form-group">
+            <label>Qualification:</label>
+            <table>
+                <tr>
+                    <th>SI NO.</th>
+                    <th>Examination</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Year of passing</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Class X</td>
+                    <td><input type="text" name="qualification-class-x"></td>
+                    <td><input type="text" name="institution-class-x"></td>
+                    <td><input type="text" name="year-class-x"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Class XII</td>
+                    <td><input type="text" name="qualification-class-xii"></td>
+                    <td><input type="text" name="institution-class-xii"></td>
+                    <td><input type="text" name="year-class-xii"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Graduation</td>
+                    <td><input type="text" name="qualification-graduation"></td>
+                    <td><input type="text" name="institution-graduation"></td>
+                    <td><input type="text" name="year-graduation"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Master's</td>
+                    <td><input type="text" name="qualification-masters"></td>
+                    <td><input type="text" name="institution-masters"></td>
+                    <td><input type="text" name="year-masters"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>10 characters max</td>
+                    <td>up to 2 decimals</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <label>Course Applied For:</label>
+            <input type="radio" id="bca" name="course" value="BCA">
+            <label for="bca">BCA</label>
+
+            <input type="radio" id="bcom" name="course" value="B.Com">
+            <label for="bcom">B.Com</label>
+
+            <input type="radio" id="bsc" name="course" value="B.Sc">
+            <label for="bsc">B.Sc</label>
+
+            <input type="radio" id="ba" name="course" value="B.A">
+            <label for="ba">B.A</label>
+        </div>
+
+        <div class="button-container">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </div>
+</body>
+
+</html>
